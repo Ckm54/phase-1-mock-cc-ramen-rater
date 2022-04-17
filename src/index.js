@@ -20,5 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
-    
+    function displayInfo(item) {
+        console.log(item)
+    }
 })
