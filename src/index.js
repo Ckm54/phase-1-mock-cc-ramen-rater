@@ -39,6 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
             rating: document.getElementById("new-rating").value,
             comment: document.getElementById("new-comment").value
         }
-        console.log(data)
+        fetch("http://localhost:3000/ramens", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => loadMenu(data))
+
+        newRamenform.reset()
     })
 })
