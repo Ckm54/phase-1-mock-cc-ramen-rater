@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const menuContainer = document.getElementById("ramen-menu")
+    const detailContainer = document.getElementById("ramen-detail")
 
     fetch("http://localhost:3000/ramens")
     .then(response => response.json())
@@ -21,6 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function displayInfo(item) {
-        console.log(item)
+        detailContainer.querySelector("img").setAttribute("src", `${item.image}`)
     }
 })
