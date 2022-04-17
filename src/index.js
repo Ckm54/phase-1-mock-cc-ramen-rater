@@ -25,5 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         detailContainer.querySelector("img").setAttribute("src", `${item.image}`);
         detailContainer.querySelector("h2").innerText = item.name;
         detailContainer.querySelector("h3").innerText = item.restaurant;
+        document.getElementById("rating-display").innerText = item.rating;
+        document.getElementById("comment-display").innerText = item.comment;
     }
 })
