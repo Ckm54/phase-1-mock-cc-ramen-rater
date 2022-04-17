@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const menuContainer = document.getElementById("ramen-menu")
     const detailContainer = document.getElementById("ramen-detail")
+    const newRamenform = document.getElementById("new-ramen")
 
     fetch("http://localhost:3000/ramens")
     .then(response => response.json())
@@ -28,4 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("rating-display").innerText = item.rating;
         document.getElementById("comment-display").innerText = item.comment;
     }
+
+    newRamenform.addEventListener("submit", (e) => {
+        e.preventDefault()
+        let data = {
+            name: document.getElementById("new-name").value,
+            restaurant: document.getElementById("new-restaurant").value,
+            image: document.getElementById("new-image").value,
+            rating: document.getElementById("new-rating").value,
+            comment: document.getElementById("new-comment").value
+        }
+        console.log(data)
+    })
 })
