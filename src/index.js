@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function displayInfo(item) {
-        detailContainer.querySelector("img").setAttribute("src", `${item.image}`)
+        detailContainer.querySelector("img").setAttribute("src", `${item.image}`);
+        detailContainer.querySelector("h2").innerText = item.name;
+        detailContainer.querySelector("h3").innerText = item.restaurant;
     }
 })
