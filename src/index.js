@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(data)
         data.forEach(element => {
             loadMenu(element)
+
+            if(element.id === 1){
+                displayInfo(element)
+            }
         });
     })
 
